@@ -52,17 +52,7 @@ Group by reg
 Order by 2 
 ```
 
-4. What is the average number of JHS teachers in the country?
-
-```
-Select reg, AVG(cast(total as int)) as average_teachers
-From jhs
-Where reg <> 'Grand Total'
-Group by reg
-Order by 2 
-```
-
-5. Which region has the highest number of JHS teachers?
+4. Which region has the highest number of JHS teachers?
 
 ```
 Select reg, MAX(cast(total as int)) as highest_teacher
@@ -72,7 +62,7 @@ Group by reg
 Order by 2 desc
 ```
 
-6. Which region has less than 10,000 teachers?
+5. Which region has less than 10,000 teachers?
 
 ```
 Select reg, MAX(cast(total as int)) as highest_teacher
@@ -83,7 +73,7 @@ Having MAX(cast(total as int))<10000
 Order by 2
 ```
 
-7. Which region has the highest number of special science teachers?
+6. Which region has the highest number of special science teachers?
 
 ```
 Select reg, MAX(ssteacher_i) as highest_ssteacher
@@ -95,7 +85,7 @@ Order by 2 desc
 
 ### Junior and Senior Highschool Teachers
 
-8. What is the average number of JHS and shs teachers?
+7. What is the average number of JHS and shs teachers?
 ```
 Select jhs.reg
 , MAX(jhs.total + shs.total) as total_teachers
@@ -108,7 +98,7 @@ Group by jhs.reg
 Order by jhs_and_shs_teachers desc
 ```
 
-9. Which region has the highest number of JHS and SHS teachers?
+8. Which region has the highest number of JHS and SHS teachers?
 
 ```
 Select jhs.reg, SUM(jhs.total + shs.total) as jhs_and_shs_teachers
@@ -118,3 +108,12 @@ Join shs
 Where jhs.reg <> 'Grand Total'
 Group by jhs.reg
 Order by jhs_and_shs_teachers desc
+
+```
+
+## Key Takeaways
+
+1. There are regional disparities in terms of the quality of education given to students. Mindanao suffers from having low-qualified teachers.
+2. Interestingly, BARMM had the most number of teachers but they remain in lower teaching positions. There might be issues of professional and career development of teachers in this region.
+3. It's difficult to teach in mountainous areas and students choose to work in the fields all day.
+4. Region IV-A and NCR had the highest number of teachers recorded per year. Top universities and most urban centers are located in these areas.
