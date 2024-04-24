@@ -26,8 +26,7 @@ From jhs
 Where reg <> 'Grand Total'
 ```
 
-2. Calculate the proportion of JHS teachers with Instructor III status over total JHS teachers
-
+2. Calculate the proportion of JHS teachers according to teaching position (e.g., Teacher I, Teacher II, Teacher III)
 ```
 Select reg, teacher_i,(teacher_i/total)*100 as percent_teacher_i
 From jhs
